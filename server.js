@@ -1,26 +1,17 @@
-// *** ctrl+k > ctrl+u - Comentar bloco de código selecionado
-
-// import { createServer } from 'node:http' // Pra usar import tem que ter um package.json com type:module para usar js com poo
-
-// const server = createServer((request, response) => {
-//     response.write("oi")
-
-//     return response.end()
-// })
-
-// server.listen(3333)
-
 import { fastify } from 'fastify'
 import { db } from './db.js'
+import { db_postgres } from './db_postgres.js'
 
 const server = fastify()
-const database = new db()
+const database_testes = new db()
+const database_postgres = new db_postgres()
 
-server.post('/user', (request, reply) => {
+const database = database_postgres
 
+server.post('/user', async (request, reply) => {
     const { nome, email, senha } = request.body
 
-    database.create({
+    await database.create({
         nome,
         email,
         senha,
@@ -29,22 +20,24 @@ server.post('/user', (request, reply) => {
     return reply.status(201).send() // informar o status code da requisição
 })
 
-server.get('/user', (request, reply) => {
+server.get('/user', async (request, reply) => {
     const search = request.query.search
 
-    if (database.list(search).length === 0){
+    const users = await database.list(search)
+
+    if (users.length === 0) {
         return reply.status(404).send({ message: 'No users found' });
- 
     }
-    return database.list(search)
+
+    return users
 })
 
-server.put('/user/:userId', (request, reply) => {
+server.put('/user/:userId', async (request, reply) => {
     const id = request.params.userId
     const { nome, email, senha } = request.body
 
     try {
-        database.update(id, {
+        await database.update(id, {
             nome, email, senha,
         })
 
@@ -54,17 +47,18 @@ server.put('/user/:userId', (request, reply) => {
     }
 })
 
-server.delete('/user/delete/:userId', (request, reply) => {
+server.delete('/user/delete/:userId', async (request, reply) => {
     const id = request.params.userId
 
     try {
-        database.delete(id)
+        await database.delete(id)
         return reply.status(204).send()
     } catch (error) {
         return reply.status(404).send({ error: error.message })
     }
 })
 
+//comentando
 server.listen({
-    port: 3333,
+    port: process.env.PORT ?? 3333,
 })
