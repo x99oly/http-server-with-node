@@ -8,7 +8,7 @@ Bem-vindo ao **Projeto de Exemplo**! Este repositório foi criado para demonstra
 
 ## 📝 Índice
 
-- [Sobre o Projeto](#sobre)
+- [Sobre o Projeto](#sobre-o-projeto)
 - [Funcionalidades](#funcionalidades)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Instalação](#instalação)
@@ -19,7 +19,7 @@ Bem-vindo ao **Projeto de Exemplo**! Este repositório foi criado para demonstra
 
 ---
 
-## Sobre
+## Sobre o projeto
 
 O **Projeto de Exemplo** é um repositório fictício criado para mostrar como montar um README bem estruturado, bonito e funcional. O objetivo é explorar os elementos do Markdown, como listas, links, imagens e muito mais, para tornar a documentação clara e agradável para outros desenvolvedores e colaboradores.
 
