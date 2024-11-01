@@ -8,7 +8,7 @@ Bem-vindo ao **Projeto de Exemplo**! Este repositório foi criado para demonstra
 
 ## 📝 Índice
 
-- [Sobre o Projeto](#sobre-o-projeto)
+- [Sobre o Projeto](#💡-Sobre-o-Projeto)
 - [Funcionalidades](#funcionalidades)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Instalação](#instalação)
