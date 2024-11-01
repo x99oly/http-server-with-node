@@ -27,7 +27,8 @@ Este projeto é voltado para qualquer pessoa que queira aprender mais sobre Mark
 
 ---
 
-## 🚀 Funcionalidades
+🚀 
+## Funcionalidades
 
 - ✅ Interface amigável e intuitiva
 - 🛠️ Ferramentas para desenvolvimento colaborativo
